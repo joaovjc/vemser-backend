@@ -19,7 +19,10 @@ public class ExercicioDois {
 			System.out.println("Reprovado");
 		}else if(media >=5.1 && media <= 6.9) {
 			System.out.println("Em Exame");
-		}else System.out.println("Aprovado");
+		}else {
+			System.out.println("Aprovado");
+		}
+		
 		s.close();
 	}
 }

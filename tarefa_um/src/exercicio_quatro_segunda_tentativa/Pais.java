@@ -25,7 +25,9 @@ public class Pais {
 	}
 	
 	public Estado acharEstado(String nomeEstado) {
-		for (Estado estado : estados) if(estado.getNome().toLowerCase().contains(nomeEstado.toLowerCase()))return estado;
+		for (Estado estado : estados) {
+			if(estado.getNome().toLowerCase().contains(nomeEstado.toLowerCase()))return estado;
+		}
 		return null;
 	}
 	
