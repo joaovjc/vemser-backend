@@ -6,6 +6,7 @@ public class ExercicioSeis {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		String palavra = s.nextLine().toLowerCase();
+		
 		switch (palavra) {
 		
 			case "cachorro", "dog" -> System.out.println(("dog".equals(palavra)?"Cachorro":"dog"));
