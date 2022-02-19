@@ -9,6 +9,7 @@ public class ExercicioSeis {
 		Random r = new Random();
 		int[] valores = {r.nextInt(100), r.nextInt(100), r.nextInt(100), r.nextInt(100), r.nextInt(100),
 			r.nextInt(100), r.nextInt(100), r.nextInt(100), r.nextInt(100), r.nextInt(100)};
+		
 		System.out.println("Digite um numero: ");
 		
 		for (int j : valores) {
@@ -16,8 +17,6 @@ public class ExercicioSeis {
 		}
 		
 		int numero = s.nextInt();
-		
-		
 		
 		for (int i = 0; i < valores.length; i++) {
 			if(valores[i] == numero) {
