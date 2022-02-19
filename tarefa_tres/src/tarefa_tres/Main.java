@@ -1,0 +1,38 @@
+package tarefa_tres;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Endereco enderecoPessoalJoao = new Endereco("rua", "Batatinha Embatatada", "12345-678", "batatopolis", "batatonia", "batatolandia", 1, 2222);
+		Endereco enderecoEmpresarialJoao = new Endereco("rua", "cenourinha cenourada", "98765-432", "cenouropolis", "cenouronia", "cenoulandia", 2, 1111);
+		Endereco[] enderecosJoao = {enderecoPessoalJoao, enderecoEmpresarialJoao};
+		
+		Contato contatoPessoalJoao = new Contato("Numero Pessoal", "123456789");
+		Contato contatoEmpresarialJoao = new Contato("Numero Comercial", "987654321");
+		
+		Contato[] contatosJoao = {contatoPessoalJoao, contatoEmpresarialJoao};
+		
+		Cliente joao = new Cliente("João Victor", "123.456.789-12", contatosJoao, enderecosJoao);
+		
+		joao.imprimirCliente();
+		joao.imprimirContatos();
+		joao.imprimirEnderecos();
+		
+		System.out.println();
+		
+		Endereco enderecoPessoalMaria = new Endereco("rua", "churras churrascada", "12345-678", "churrascopolis", "churrasconia", "churraslandia", 1, 2222);
+		Endereco enderecoEmpresarialMaria = new Endereco("rua", "pizzinha pizzada", "98765-432", "pizzopolis", "pizzonia", "pizzalandia", 2, 1111);
+		Endereco[] enderecosMaria = {enderecoPessoalMaria, enderecoEmpresarialMaria};
+		
+		Contato contatoPessoalMaria = new Contato("Numero Pessoal", "123456789");
+		Contato contatoEmpresarialMaria = new Contato("Numero Comercial", "987654321");
+		
+		Contato[] contatosMaria = {contatoPessoalMaria, contatoEmpresarialMaria};
+		
+		Cliente maria = new Cliente("Maria Eduarda", "123.456.789-12", contatosMaria, enderecosMaria);
+		
+		maria.imprimirCliente();
+		maria.imprimirContatos();
+		maria.imprimirEnderecos();
+	}
+}
