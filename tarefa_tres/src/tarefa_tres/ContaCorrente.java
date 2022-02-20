@@ -27,9 +27,9 @@ public class ContaCorrente {
 	}
 	
 	public boolean sacar(double valor) {
-		if (valor > this.saldo.doubleValue()) {
+		if (valor > this.saldo.doubleValue() || valor <= 0) {
 			
-			if (valor > this.saldo.add(this.chequeEpecial).doubleValue()) {
+			if (valor > this.saldo.add(this.chequeEpecial).doubleValue() || valor <= 0) {
 				return false;
 			}
 			
@@ -55,8 +55,8 @@ public class ContaCorrente {
 	}
 	
 	public boolean transferir(ContaCorrente contaCorrente, double valor) {
-		if (valor > this.saldo.doubleValue()) {
-			if (valor > this.saldo.add(this.chequeEpecial).doubleValue()) {
+		if (valor > this.saldo.doubleValue() || valor <= 0) {
+			if (valor > this.saldo.add(this.chequeEpecial).doubleValue() || valor <= 0) {
 				return false;
 			}
 			
