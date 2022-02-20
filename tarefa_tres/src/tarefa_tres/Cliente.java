@@ -30,4 +30,9 @@ public class Cliente {
 		System.out.println("Nome: "+ nome
 				+ "\nCPF: " + cpf);
 	}
+
+	public String getNome() {
+		return nome;
+	}
+	
 }

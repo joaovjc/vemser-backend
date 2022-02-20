@@ -1,5 +1,7 @@
 package tarefa_tres;
 
+import java.math.BigDecimal;
+
 public class Main {
 	public static void main(String[] args) {
 		
@@ -34,5 +36,34 @@ public class Main {
 		maria.imprimirCliente();
 		maria.imprimirContatos();
 		maria.imprimirEnderecos();
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("====================================================================================================================");
+		
+		ContaCorrente contaCorrenteJoao = 
+				new ContaCorrente(joao, "12.345-4", 133, new BigDecimal(500), new BigDecimal(5000));
+		ContaCorrente contaCorrenteMaria = 
+				new ContaCorrente(maria, "98.765-4", 331, new BigDecimal(500), new BigDecimal(5000));
+		
+		contaCorrenteJoao.imprimirContaCorrente();
+		System.out.println();
+		System.out.println(contaCorrenteJoao.depositar(100));
+		System.out.println();
+		contaCorrenteJoao.imprimirContaCorrente();
+		System.out.println();
+		System.out.println(contaCorrenteJoao.sacar(100));
+		System.out.println();
+		contaCorrenteJoao.imprimirContaCorrente();
+		System.out.println();
+		System.out.println("======================================================");
+		contaCorrenteMaria.imprimirContaCorrente();
+		System.out.println();
+		System.out.println(contaCorrenteJoao.transferir(contaCorrenteMaria, 1000));
+		System.out.println();
+		contaCorrenteMaria.imprimirContaCorrente();
+		System.out.println();
+		contaCorrenteJoao.imprimirContaCorrente();
 	}
 }
