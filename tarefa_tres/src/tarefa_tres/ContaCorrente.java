@@ -63,6 +63,7 @@ public class ContaCorrente {
 			}
 			
 			this.saldo = this.saldo.subtract(new BigDecimal(valor));
+
 			contaCorrente.depositar(valor);
 			return true;
 		}
@@ -71,5 +72,46 @@ public class ContaCorrente {
 		contaCorrente.depositar(valor);
 		return true;
 	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public String getNumeroConta() {
+		return numeroConta;
+	}
+
+	public void setNumeroConta(String numeroConta) {
+		this.numeroConta = numeroConta;
+	}
+
+	public int getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+
+	public BigDecimal getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(BigDecimal saldo) {
+		this.saldo = saldo;
+	}
+
+	public BigDecimal getChequeEpecial() {
+		return chequeEpecial;
+	}
+
+	public void setChequeEpecial(BigDecimal chequeEpecial) {
+		this.chequeEpecial = chequeEpecial;
+	}
+	
 	
 }

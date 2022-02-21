@@ -14,7 +14,9 @@ public class Main {
 		
 		Contato[] contatosJoao = {contatoPessoalJoao, contatoEmpresarialJoao};
 		
-		Cliente joao = new Cliente("João Victor", "123.456.789-12", contatosJoao, enderecosJoao);
+		Cliente joao = new Cliente("João Victor", "123.456.789-12");
+		joao.setEndereco(enderecosJoao);
+		joao.setContato(contatosJoao);
 		
 		joao.imprimirCliente();
 		joao.imprimirContatos();
@@ -31,7 +33,9 @@ public class Main {
 		
 		Contato[] contatosMaria = {contatoPessoalMaria, contatoEmpresarialMaria};
 		
-		Cliente maria = new Cliente("Maria Eduarda", "123.456.789-12", contatosMaria, enderecosMaria);
+		Cliente maria = new Cliente("Maria Eduarda", "123.456.789-12");
+		maria.setEndereco(enderecosMaria);
+		maria.setContato(contatosMaria);
 		
 		maria.imprimirCliente();
 		maria.imprimirContatos();
