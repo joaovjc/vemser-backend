@@ -26,6 +26,7 @@ public class ContaCorrente {
 				+ "\nCheque Especial: " + this.chequeEpecial.doubleValue());
 	}
 	
+	
 	public boolean sacar(double valor) {
 		if (valor > this.saldo.doubleValue() || valor <= 0) {
 			
@@ -34,14 +35,13 @@ public class ContaCorrente {
 			}
 			
 			this.saldo = this.saldo.subtract(new BigDecimal(valor));
-			this.chequeEpecial = this.chequeEpecial.add(this.saldo);
-			this.saldo = BigDecimal.ZERO;
 			return true;
 		}
 		
 		this.saldo = this.saldo.subtract(new BigDecimal(valor));
 		return true;
 	}
+	
 	
 	public boolean depositar(double valor) {
 		if (valor <= 0)return false;
@@ -50,9 +50,11 @@ public class ContaCorrente {
 		return true;
 	}
 	
+	
 	public double retornarSaldoComChequeEspecial() {
 		return this.saldo.add(this.chequeEpecial).doubleValue();
 	}
+	
 	
 	public boolean transferir(ContaCorrente contaCorrente, double valor) {
 		if (valor > this.saldo.doubleValue() || valor <= 0) {
@@ -61,8 +63,6 @@ public class ContaCorrente {
 			}
 			
 			this.saldo = this.saldo.subtract(new BigDecimal(valor));
-			this.chequeEpecial = this.chequeEpecial.add(this.saldo);
-			this.saldo = BigDecimal.ZERO;
 			contaCorrente.depositar(valor);
 			return true;
 		}
@@ -71,4 +71,5 @@ public class ContaCorrente {
 		contaCorrente.depositar(valor);
 		return true;
 	}
+	
 }

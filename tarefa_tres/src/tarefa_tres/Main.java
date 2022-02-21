@@ -9,8 +9,8 @@ public class Main {
 		Endereco enderecoEmpresarialJoao = new Endereco("rua", "cenourinha cenourada", "98765-432", "cenouropolis", "cenouronia", "cenoulandia", 2, 1111);
 		Endereco[] enderecosJoao = {enderecoPessoalJoao, enderecoEmpresarialJoao};
 		
-		Contato contatoPessoalJoao = new Contato("Numero Pessoal", "123456789");
-		Contato contatoEmpresarialJoao = new Contato("Numero Comercial", "987654321");
+		Contato contatoPessoalJoao = new Contato("Numero Pessoal", "123456789", 1);
+		Contato contatoEmpresarialJoao = new Contato("Numero Comercial", "987654321", 2);
 		
 		Contato[] contatosJoao = {contatoPessoalJoao, contatoEmpresarialJoao};
 		
@@ -26,8 +26,8 @@ public class Main {
 		Endereco enderecoEmpresarialMaria = new Endereco("rua", "pizzinha pizzada", "98765-432", "pizzopolis", "pizzonia", "pizzalandia", 2, 1111);
 		Endereco[] enderecosMaria = {enderecoPessoalMaria, enderecoEmpresarialMaria};
 		
-		Contato contatoPessoalMaria = new Contato("Numero Pessoal", "123456789");
-		Contato contatoEmpresarialMaria = new Contato("Numero Comercial", "987654321");
+		Contato contatoPessoalMaria = new Contato("Numero Pessoal", "123456789", 1);
+		Contato contatoEmpresarialMaria = new Contato("Numero Comercial", "987654321", 2);
 		
 		Contato[] contatosMaria = {contatoPessoalMaria, contatoEmpresarialMaria};
 		
