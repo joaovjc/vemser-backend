@@ -4,8 +4,8 @@ import tarefa_quatro.contas.Conta;
 
 public interface Movimentacao {
 	
-	public boolean sacar(double valor);
-	public boolean depositar(double valor);
-	public boolean transferir(Conta contaPessoa, double valor);
+	boolean sacar(double valor);
+	boolean depositar(double valor);
+	boolean transferir(Conta contaPessoa, double valor);
 	
 }

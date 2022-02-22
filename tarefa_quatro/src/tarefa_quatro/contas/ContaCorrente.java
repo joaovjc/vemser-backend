@@ -7,7 +7,8 @@ public class ContaCorrente extends Conta implements Impressao{
 
 	private double chequeEpecial;
 	
-	public ContaCorrente(Cliente cliente, String numeroConta, int agencia, double saldo, double chequeEpecial) {
+	public ContaCorrente(Cliente cliente, String numeroConta, int agencia
+			, double saldo, double chequeEpecial) {
 		super(cliente, numeroConta, agencia, saldo);
 		this.chequeEpecial = chequeEpecial;
 	}

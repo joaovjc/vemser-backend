@@ -68,7 +68,7 @@ public class Main {
 		System.out.println("======================================================");
 		contaPoupancaMaria.imprimir();
 		System.out.println();
-		System.out.println(contaCorrenteJoao.transferir(contaPoupancaMaria, 1000));
+		System.out.println(contaCorrenteJoao.transferir(contaPoupancaMaria, 500));
 		System.out.println();
 		contaPoupancaMaria.imprimir();
 		System.out.println();

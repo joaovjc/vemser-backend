@@ -28,6 +28,7 @@ public class Cliente {
 			}
 		}
 	}
+	
 	public void imprimirCliente(){
 		System.out.println("Nome: "+ nome
 				+ "\nCPF: " + cpf);
@@ -54,7 +55,7 @@ public class Cliente {
 	}
 
 	public void setContato(Contato[] contato) {
-		if (contato.length == 2) {
+		if (contato.length <= 2) {
 			this.contato = contato;
 		}else {
 			System.err.println("maior ou menor que dois contatos");
