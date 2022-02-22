@@ -12,7 +12,7 @@ public class ContaPoupanca extends Conta implements Impressao {
 	}
 	
 	public void creditarTaxa() {
-		super.depositar(super.getSaldo() * JUROS_MENSAL);
+		super.setSaldo(super.getSaldo() * JUROS_MENSAL);
 	}
 	
 	@Override

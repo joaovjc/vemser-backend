@@ -73,5 +73,11 @@ public class Main {
 		contaPoupancaMaria.imprimir();
 		System.out.println();
 		contaCorrenteJoao.imprimir();
+		System.out.println("======================================================");
+		System.out.println();
+		contaPoupancaMaria.imprimir();
+		contaPoupancaMaria.creditarTaxa();
+		System.out.println();
+		contaPoupancaMaria.imprimir();
 	}
 }
