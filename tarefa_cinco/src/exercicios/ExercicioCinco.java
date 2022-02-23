@@ -15,6 +15,7 @@ public class ExercicioCinco {
 		System.out.println("Digite um CPF");
 		String str = s.nextLine();
 		System.out.println();
+		
 		if (pessoaCpf.containsKey(str)) {
 			System.out.println(pessoaCpf.get(str));
 			pessoaCpf.remove(str);

@@ -1,5 +1,8 @@
 package homework_tres;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import homework_tres.cliente.Cliente;
 import homework_tres.cliente.Contato;
 import homework_tres.cliente.Endereco;
@@ -12,12 +15,15 @@ public class Main {
 		
 		Endereco enderecoPessoalJoao = new Endereco("rua", "Batatinha Embatatada", "12345-678", "batatopolis", "batatonia", "batatolandia", 1, 2222);
 		Endereco enderecoEmpresarialJoao = new Endereco("rua", "cenourinha cenourada", "98765-432", "cenouropolis", "cenouronia", "cenoulandia", 2, 1111);
-		Endereco[] enderecosJoao = {enderecoPessoalJoao, enderecoEmpresarialJoao};
+		ArrayList<Endereco> enderecosJoao = 
+				(ArrayList<Endereco>) Arrays.asList(enderecoPessoalJoao, enderecoEmpresarialJoao);
 		
 		Contato contatoPessoalJoao = new Contato("Numero Pessoal", "123456789", 1);
 		Contato contatoEmpresarialJoao = new Contato("Numero Comercial", "987654321", 2);
 		
-		Contato[] contatosJoao = {contatoPessoalJoao, contatoEmpresarialJoao};
+		ArrayList<Contato> contatosJoao = 
+				(ArrayList<Contato>) Arrays.asList(contatoPessoalJoao, contatoEmpresarialJoao);
+		
 		
 		Cliente joao = new Cliente("João Victor", "123.456.789-12");
 		joao.setEndereco(enderecosJoao);
@@ -31,12 +37,12 @@ public class Main {
 		
 		Endereco enderecoPessoalMaria = new Endereco("rua", "churras churrascada", "12345-678", "churrascopolis", "churrasconia", "churraslandia", 1, 2222);
 		Endereco enderecoEmpresarialMaria = new Endereco("rua", "pizzinha pizzada", "98765-432", "pizzopolis", "pizzonia", "pizzalandia", 2, 1111);
-		Endereco[] enderecosMaria = {enderecoPessoalMaria, enderecoEmpresarialMaria};
+		ArrayList<Endereco> enderecosMaria = (ArrayList<Endereco>) Arrays.asList(enderecoPessoalMaria, enderecoEmpresarialMaria);
 		
 		Contato contatoPessoalMaria = new Contato("Numero Pessoal", "123456789", 1);
 		Contato contatoEmpresarialMaria = new Contato("Numero Comercial", "987654321", 2);
 		
-		Contato[] contatosMaria = {contatoPessoalMaria, contatoEmpresarialMaria};
+		ArrayList<Contato> contatosMaria = (ArrayList<Contato>) Arrays.asList(contatoPessoalMaria, contatoEmpresarialMaria);
 		
 		Cliente maria = new Cliente("Maria Eduarda", "123.456.789-12");
 		maria.setEndereco(enderecosMaria);

@@ -1,11 +1,13 @@
 package homework_tres.cliente;
 
+import java.util.ArrayList;
+
 public class Cliente {
 	
 	private String nome;
 	private String cpf;
-	private Contato[] contato = new Contato[2];
-	private Endereco[] endereco = new Endereco[2];
+	private ArrayList<Contato> contato = new ArrayList<>();
+	private ArrayList<Endereco> endereco= new ArrayList<>();
 	
 	public Cliente(String nome, String cpf) {
 		this.nome = nome;
@@ -50,26 +52,27 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
-	public Contato[] getContato() {
+	public ArrayList<Contato> getContato() {
 		return contato;
 	}
 
-	public void setContato(Contato[] contato) {
-		if (contato.length <= 2) {
-			this.contato = contato;
-		}else {
-			System.err.println("maior ou menor que dois contatos");
-		}
+	public void setContato(ArrayList<Contato> contato) {
+		this.contato = contato;
 	}
 
-	public Endereco[] getEndereco() {
+	public ArrayList<Endereco> getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(Endereco[] endereco) {
+	public void setEndereco(ArrayList<Endereco> endereco) {
 		this.endereco = endereco;
 	}
-
 	
+	public void addEndereco(Endereco endereco) {
+		this.endereco.add(endereco);
+	}
 	
+	public void addContato(Contato contato) {
+		this.contato.add(contato);
+	}
 }
