@@ -11,11 +11,17 @@ public class ExercicioSeis {
 		pessoas.sort((p1, p2) -> p1.getNome().compareTo(p2.getNome()));
 		pessoas.forEach(System.out::println);
 		System.out.println("=============================");
+		
 		pessoas.sort((p1, p2) -> p2.getIdade() - p1.getIdade());
 		pessoas.forEach(System.out::println);
+		
 		System.out.println("=============================");
-		pessoas.sort((p1, p2) -> (p1.getNome().equalsIgnoreCase(p2.getNome())
-				? p1.getIdade() - p2.getIdade() : p1.getNome().compareTo(p2.getNome())));
+		
+		pessoas.sort((p1, p2) -> 
+				(p1.getNome().equalsIgnoreCase(p2.getNome())
+				? p1.getIdade() - p2.getIdade() 
+				: p1.getNome().compareTo(p2.getNome())));
+		
 		pessoas.forEach(System.out::println);
 		
 		
