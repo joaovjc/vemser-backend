@@ -7,10 +7,21 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		List<OperacaoMatematica> op = Arrays.asList(new Soma(), new Divisao(), 
-				new Subtracao(), new Multiplicacao());
-	
-		op.forEach(ope -> System.out.println(ope.calcula(10, 5)));
+		OperacaoMatematica soma= (a,b) -> a+b;
+		OperacaoMatematica subtracao= (a,b) -> a-b; 
+		OperacaoMatematica divisao = (a,b) -> a/b;
+		OperacaoMatematica multiplicacao = (a,b) -> a*b;
+		
+		List<OperacaoMatematica> opUm = Arrays.asList(soma,subtracao,divisao,multiplicacao);
+		
+		opUm.forEach(ope -> System.out.println(ope.calcula(2, 5)));
+		
+//		OperacaoMatematica sr = null;
+//		
+//		List<OperacaoMatematica> opDois = Arrays.asList(sr = (a,b) -> a+b, sr = (a,b) -> a-b, 
+//				sr = (a,b) -> a/b, sr = (a,b) -> a*b);
+//		
+//		opDois.forEach(ope -> System.out.println(ope.calcula(10, 5)));
 
 	}
 
