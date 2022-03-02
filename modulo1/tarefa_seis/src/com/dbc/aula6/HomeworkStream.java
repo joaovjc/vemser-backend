@@ -22,32 +22,50 @@ public class HomeworkStream {
 
         //2- filtrar todas as pessoas com salario maior do que 5 mil
         
-        lista.stream().filter(p -> p.getSalario() > 5000.0).forEach(System.out::println);
+        lista.stream()
+        .filter(p -> p.getSalario() > 5000.0)
+        .forEach(System.out::println);
         
         //3- filtrar todas as pessoas que são desenvolvedoras e organizar por salário crescente
 
-        lista.stream().filter(p -> p.getCargo().equals("Desenvolvedor"))
-        .sorted(Comparator.comparing(Pessoa::getSalario)).forEach(System.out::println);
+        lista.stream()
+        .filter(p -> p.getCargo().equals("Desenvolvedor"))
+        .sorted(Comparator.comparing(Pessoa::getSalario))
+        .forEach(System.out::println);
         
         //4- fazer a média salarial de todos
         
-        System.out.println(lista.stream().mapToDouble(Pessoa::getSalario).average());
+        System.out.println(
+        		lista.stream()
+        		.mapToDouble(Pessoa::getSalario)
+        		.average());
         
         //5- verificar na lista (utilizando o método anyMatch) se tem alguém que ganha mais do que 20 mil
         
-        System.out.println(lista.stream().anyMatch(p -> p.getSalario() > 20000.0));
+        System.out.println(
+        		lista.stream()
+        		.anyMatch(p -> p.getSalario() > 20000.0));
         
         //6 - retornar uma lista de todos os ids das pessoas
         
-        List<Integer> intStream = lista.stream().map(Pessoa::getId).toList();
+        List<Integer> intStream = 
+        		lista.stream()
+        		.map(Pessoa::getId)
+        		.toList();
         
         //7 - criar uma nova classe Salario com ID e Salário, utilizando a função "map" do stream, retornar uma lista desse novo objeto
         
-        List<Salario> salarios = lista.stream().map(p -> new Salario(p.getId(),p.getSalario())).toList();
+        List<Salario> salarios = 
+        		lista.stream()
+        		.map(p -> new Salario(p.getId(),p.getSalario()))
+        		.toList();
+        salarios.forEach(System.out::println);
         
         //8- retornar um Map (HashMap) contendo os ids e os nomes dos colaboradores
         
-        Map<Integer, String> map = lista.stream().collect(Collectors.toMap(Pessoa::getId, Pessoa::getNome));
+        Map<Integer, String> map = 
+        		lista.stream()
+        		.collect(Collectors.toMap(Pessoa::getId, Pessoa::getNome));
         
         //9- com o mapa da questão 8, retornar o nome com o id=2
         System.out.println(map.get(2));
@@ -124,5 +142,11 @@ public class HomeworkStream {
 		public void setSalario(double salario) {
 			this.salario = salario;
 		}
+		@Override
+		public String toString() {
+			return "Salario [id=" + id + ", salario=" + salario + "]";
+		}
+		
+		
     }
 }
