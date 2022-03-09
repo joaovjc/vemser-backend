@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "c9fb02a7-8685-4a35-9e8f-e3d386019ef7",
+		"name": "homework2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pessoa",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://back-vemserdbc.herokuapp.com/pessoa",
+									"protocol": "https",
+									"host": [
+										"back-vemserdbc",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"pessoa"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Mar 2022 23:36:40 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"idPessoa\": 1,\n        \"nome\": \"Maicon Gerardi\",\n        \"dataNascimento\": \"1990-10-10\",\n        \"cpf\": \"12345678910\"\n    },\n    {\n        \"idPessoa\": 2,\n        \"nome\": \"Charles Pereira\",\n        \"dataNascimento\": \"1985-05-08\",\n        \"cpf\": \"12345678911\"\n    },\n    {\n        \"idPessoa\": 3,\n        \"nome\": \"Marina Oliveira\",\n        \"dataNascimento\": \"1970-03-30\",\n        \"cpf\": \"12345678912\"\n    },\n    {\n        \"idPessoa\": 4,\n        \"nome\": \"Rafael Lazzari\",\n        \"dataNascimento\": \"1990-07-01\",\n        \"cpf\": \"12345678916\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"joaov\",\r\n    \"dataNascimento\": \"1990-07-01\",\r\n    \"cpf\": \"12345678916\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"joaov\",\r\n    \"dataNascimento\": \"1990-07-01\",\r\n    \"cpf\": \"12345678916\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://back-vemserdbc.herokuapp.com/pessoa",
+									"protocol": "https",
+									"host": [
+										"back-vemserdbc",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"pessoa"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Mar 2022 23:44:09 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"idPessoa\": 2,\n    \"nome\": \"joaov\",\n    \"dataNascimento\": \"1990-07-01\",\n    \"cpf\": \"12345678916\"\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"joaoV\",\r\n    \"dataNascimento\": \"2000-07-01\",\r\n    \"cpf\": \"12345678916\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa/2",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"joaoV\",\r\n    \"dataNascimento\": \"2000-07-01\",\r\n    \"cpf\": \"12345678916\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://back-vemserdbc.herokuapp.com/pessoa/2",
+									"protocol": "https",
+									"host": [
+										"back-vemserdbc",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"pessoa",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Mar 2022 23:45:37 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"idPessoa\": 2,\n    \"nome\": \"joaoV\",\n    \"dataNascimento\": \"2000-07-01\",\n    \"cpf\": \"12345678916\"\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://back-vemserdbc.herokuapp.com/pessoa/2",
+							"protocol": "https",
+							"host": [
+								"back-vemserdbc",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"pessoa",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://back-vemserdbc.herokuapp.com/pessoa/2",
+									"protocol": "https",
+									"host": [
+										"back-vemserdbc",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"pessoa",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Mar 2022 23:46:17 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	]
+}
