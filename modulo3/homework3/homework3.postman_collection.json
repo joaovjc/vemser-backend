@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "09bf3fc3-c724-44e3-8e02-3a37b3980eb3",
+		"name": "homework3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "contato Copy",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/contato/byidpessoa?id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contato",
+								"byidpessoa"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/contato/byidpessoa?id=1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"contato",
+										"byidpessoa"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Mar 2022 03:32:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"idContato\": 1,\n        \"tipoContato\": \"comercial\",\n        \"numero\": \"451516541651\",\n        \"descricao\": \"descricao\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/contato",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contato"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/contato",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"contato"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Mar 2022 03:30:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"idContato\": 1,\n        \"tipoContato\": \"comercial\",\n        \"numero\": \"451516541651\",\n        \"descricao\": \"descricao\"\n    },\n    {\n        \"id\": 2,\n        \"idContato\": 2,\n        \"tipoContato\": \"comercial\",\n        \"numero\": \"451516541651\",\n        \"descricao\": \"descricao\"\n    },\n    {\n        \"id\": 3,\n        \"idContato\": 3,\n        \"tipoContato\": \"comercial\",\n        \"numero\": \"451516541651\",\n        \"descricao\": \"descricao\"\n    },\n    {\n        \"id\": 4,\n        \"idContato\": 4,\n        \"tipoContato\": \"comercial\",\n        \"numero\": \"451516541651\",\n        \"descricao\": \"descricao\"\n    },\n    {\n        \"id\": 5,\n        \"idContato\": 5,\n        \"tipoContato\": \"comercial\",\n        \"numero\": \"451516541651\",\n        \"descricao\": \"descricao\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"idContato\": 1,\r\n        \"tipoContato\": \"dnsnd\",\r\n        \"numero\": \"111111111111\",\r\n        \"descricao\": \"descrdssdicao\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contato",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contato"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 1,\r\n        \"idContato\": 1,\r\n        \"tipoContato\": \"dnsnd\",\r\n        \"numero\": \"111111111111\",\r\n        \"descricao\": \"descrdssdicao\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/contato",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"contato"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Mar 2022 03:33:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"idContato\": 1,\n    \"tipoContato\": \"dnsnd\",\n    \"numero\": \"111111111111\",\n    \"descricao\": \"descrdssdicao\"\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"idContato\": 1,\r\n    \"tipoContato\": \"dnsnd\",\r\n    \"numero\": \"111111111111\",\r\n    \"descricao\": \"aloooouuuu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/contato/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contato",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 5,\r\n    \"idContato\": 1,\r\n    \"tipoContato\": \"dnsnd\",\r\n    \"numero\": \"111111111111\",\r\n    \"descricao\": \"aloooouuuu\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/contato/5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"contato",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Mar 2022 03:40:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"idContato\": 5,\n    \"tipoContato\": \"dnsnd\",\n    \"numero\": \"111111111111\",\n    \"descricao\": \"aloooouuuu\"\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/contato/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contato",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/contato/5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"contato",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Mar 2022 03:42:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	]
+}
