@@ -5,8 +5,11 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.dbc.vemser.pessoaapi.entity.Contato;
 
+@Repository
 public class ContatoRepository {
     private static List<Contato> listaContatos = new ArrayList<>();
     private AtomicInteger COUNTER = new AtomicInteger();

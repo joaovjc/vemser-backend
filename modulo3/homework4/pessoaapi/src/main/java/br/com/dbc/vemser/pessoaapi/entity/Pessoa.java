@@ -2,6 +2,9 @@ package br.com.dbc.vemser.pessoaapi.entity;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Pessoa {
 
     private Integer idPessoa;

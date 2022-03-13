@@ -1,5 +1,8 @@
 package br.com.dbc.vemser.pessoaapi.entity;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Contato {
 	
 	private long id;

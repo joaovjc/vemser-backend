@@ -2,6 +2,7 @@ package br.com.dbc.vemser.pessoaapi.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.dbc.vemser.pessoaapi.entity.Contato;
+import br.com.dbc.vemser.pessoaapi.entity.PropertiReader;
 import br.com.dbc.vemser.pessoaapi.service.ContatoService;
 
 @RestController
 @RequestMapping("/contato") // localhost:8080/contato
 public class ContatoController {
-
+	
+	@Autowired
     private ContatoService contatoService;
-
-    public ContatoController() {
-        contatoService = new ContatoService();
-    }
+	@Autowired
+	private PropertiReader propertiReader;
 
     @PostMapping // localhost:8080/contato
     public Contato create(@RequestBody Contato contato) {
@@ -50,5 +51,10 @@ public class ContatoController {
     @DeleteMapping("/{idcontato}") // localhost:8080/pessoa/10
     public void delete(@PathVariable("idcontato") long id) throws Exception {
         contatoService.delete(id);
+    }
+    
+    @GetMapping("/ambiente")
+    public String ambiente() {
+    	return propertiReader.getAmbiente();
     }
 }
