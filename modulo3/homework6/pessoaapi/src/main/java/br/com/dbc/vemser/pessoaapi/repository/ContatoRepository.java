@@ -39,23 +39,24 @@ public class ContatoRepository {
         return listaContatos;
     }
 
-    public Contato update(Integer id,
-                         Contato ContatoAtualizar){
-    	if(idExists(id) == false)new RegraDeNegocioException("contato não econtrado");
+    public Contato update(long id,
+                         Contato ContatoAtualizar) throws Exception {
+    	System.out.println(id);
         Contato contatoRecuperado = listaContatos.stream()
                 .filter(contato -> contato.getId().equals(id))
-                .findFirst().get();
+                .findFirst()
+                .orElseThrow(() -> new RegraDeNegocioException("contato não econtrada"));
         contatoRecuperado.setDescricao(ContatoAtualizar.getDescricao());
         contatoRecuperado.setNumero(ContatoAtualizar.getNumero());
         contatoRecuperado.setTipoContato(ContatoAtualizar.getTipoContato());
         return contatoRecuperado;
     }
 
-    public void delete(Integer id){
-    	if(idExists(id) == false)new RegraDeNegocioException("contato não econtrado");
+    public void delete(long id) throws Exception {
         Contato contatoRecuperado = listaContatos.stream()
                 .filter(contato -> contato.getId().equals(id))
-                .findFirst().get();
+                .findFirst()
+                .orElseThrow(() -> new RegraDeNegocioException("Pessoa não econtrada"));
         listaContatos.remove(contatoRecuperado);
     }
 

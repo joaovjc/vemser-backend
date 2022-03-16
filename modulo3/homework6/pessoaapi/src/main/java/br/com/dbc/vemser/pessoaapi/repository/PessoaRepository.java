@@ -32,8 +32,9 @@ public class PessoaRepository {
                 .findFirst().isPresent();
     }
     
-    public Pessoa create(Pessoa pessoa){
+    public Pessoa create(Pessoa pessoa) throws Exception{
         pessoa.setIdPessoa(COUNTER.incrementAndGet());
+        if(idExists(pessoa.getIdPessoa()) == true)new RegraDeNegocioException("já existe uma pessoa com esse nome");
         listaPessoas.add(pessoa);
     	return pessoa;
     }
@@ -43,22 +44,22 @@ public class PessoaRepository {
     }
 
     public Pessoa update(Integer id,
-                         Pessoa pessoaAtualizar){
-    	if(idExists(id) == false)new RegraDeNegocioException("já existe uma pessoa com esse nome");
+                         Pessoa pessoaAtualizar) throws Exception {
         Pessoa pessoaRecuperada = listaPessoas.stream()
                 .filter(pessoa -> pessoa.getIdPessoa().equals(id))
-                .findFirst().get();
+                .findFirst()
+                .orElseThrow(() -> new RegraDeNegocioException("Pessoa não econtrada"));
         pessoaRecuperada.setCpf(pessoaAtualizar.getCpf());
         pessoaRecuperada.setNome(pessoaAtualizar.getNome());
         pessoaRecuperada.setDataNascimento(pessoaAtualizar.getDataNascimento());
         return pessoaRecuperada;
     }
 
-    public void delete(Integer id){
-    	if(idExists(id) == false)new RegraDeNegocioException("já existe uma pessoa com esse nome");
+    public void delete(Integer id) throws Exception {
         Pessoa pessoaRecuperada = listaPessoas.stream()
                 .filter(pessoa -> pessoa.getIdPessoa().equals(id))
-                .findFirst().get();
+                .findFirst()
+                .orElseThrow(() -> new RegraDeNegocioException("Pessoa não econtrada"));
         listaPessoas.remove(pessoaRecuperada);
     }
 
