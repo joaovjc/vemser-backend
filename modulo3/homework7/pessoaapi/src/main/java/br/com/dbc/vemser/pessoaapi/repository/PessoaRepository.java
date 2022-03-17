@@ -31,10 +31,13 @@ public class PessoaRepository {
                 .filter(pessoa -> pessoa.getIdPessoa().equals(id))
                 .findFirst().isPresent();
     }
-    
-    public Pessoa create(Pessoa pessoa) throws Exception{
+    public Pessoa getByid(Integer id) {
+    	return  listaPessoas.stream()
+                .filter(pessoa -> pessoa.getIdPessoa().equals(id))
+                .findFirst().get();
+    }
+    public Pessoa create(Pessoa pessoa){
         pessoa.setIdPessoa(COUNTER.incrementAndGet());
-        if(idExists(pessoa.getIdPessoa()) == true)new RegraDeNegocioException("já existe uma pessoa com esse nome");
         listaPessoas.add(pessoa);
     	return pessoa;
     }
@@ -44,22 +47,22 @@ public class PessoaRepository {
     }
 
     public Pessoa update(Integer id,
-                         Pessoa pessoaAtualizar) throws Exception {
+                         Pessoa pessoaAtualizar){
+    	if(idExists(id) == false)new RegraDeNegocioException("já existe uma pessoa com esse nome");
         Pessoa pessoaRecuperada = listaPessoas.stream()
                 .filter(pessoa -> pessoa.getIdPessoa().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new RegraDeNegocioException("Pessoa não econtrada"));
+                .findFirst().get();
         pessoaRecuperada.setCpf(pessoaAtualizar.getCpf());
         pessoaRecuperada.setNome(pessoaAtualizar.getNome());
         pessoaRecuperada.setDataNascimento(pessoaAtualizar.getDataNascimento());
         return pessoaRecuperada;
     }
 
-    public void delete(Integer id) throws Exception {
+    public void delete(Integer id){
+    	if(idExists(id) == false)new RegraDeNegocioException("já existe uma pessoa com esse nome");
         Pessoa pessoaRecuperada = listaPessoas.stream()
                 .filter(pessoa -> pessoa.getIdPessoa().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new RegraDeNegocioException("Pessoa não econtrada"));
+                .findFirst().get();
         listaPessoas.remove(pessoaRecuperada);
     }
 

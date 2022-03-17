@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Repository;
 
 import br.com.dbc.vemser.pessoaapi.entity.Endereco;
+import br.com.dbc.vemser.pessoaapi.exceptions.RegraDeNegocioException;
 
 @Repository
 public class EnderecoRepository {
@@ -28,6 +29,12 @@ public class EnderecoRepository {
                 .findFirst().isPresent();
     }
     
+    public Endereco getByid(Integer id) {
+    	return  listaEnderecos.stream()
+                .filter(endereco -> endereco.getId().equals(id))
+                .findFirst().get();
+    }
+    
     public Endereco create(Endereco endereco) {
     	endereco.setId(COUNTER.incrementAndGet());
         listaEnderecos.add(endereco);
@@ -38,24 +45,27 @@ public class EnderecoRepository {
         return listaEnderecos;
     }
 
-    public Endereco update(long id,
-                         Endereco enderecoAtualizar) throws Exception {
-    	System.out.println(id);
+    public Endereco update(Integer id,
+                         Endereco enderecoAtualizar){
+    	if(idExists(id) == false)new RegraDeNegocioException("Não existe um Endereço com esse id");
         Endereco enderecoRecuperado = listaEnderecos.stream()
                 .filter(endereco -> endereco.getId()==id)
-                .findFirst()
-                .orElseThrow(() -> new Exception("contato não econtrada"));
-        enderecoRecuperado.setCidade(enderecoAtualizar.getCidade());
-        enderecoRecuperado.setNumero(enderecoAtualizar.getNumero());
+                .findFirst().get();
         enderecoRecuperado.setTipoEndereco(enderecoAtualizar.getTipoEndereco());
+        enderecoRecuperado.setCep(enderecoAtualizar.getCep());
+        enderecoRecuperado.setLogadouro(enderecoAtualizar.getLogadouro());
+        enderecoRecuperado.setNumero(enderecoAtualizar.getNumero());
+        enderecoRecuperado.setPais(enderecoAtualizar.getPais());
+        enderecoRecuperado.setEstado(enderecoAtualizar.getEstado());
+        enderecoRecuperado.setCidade(enderecoAtualizar.getCidade());
         return enderecoRecuperado;
     }
 
-    public void delete(long id) throws Exception {
+    public void delete(Integer id){
+    	if(idExists(id) == false)new RegraDeNegocioException("Não existe um Endereço com esse id");
         Endereco enderecoRecuperado = listaEnderecos.stream()
                 .filter(endereco -> endereco.getId()==id)
-                .findFirst()
-                .orElseThrow(() -> new Exception("Pessoa não econtrada"));
+                .findFirst().get();
         listaEnderecos.remove(enderecoRecuperado);
     }
 
