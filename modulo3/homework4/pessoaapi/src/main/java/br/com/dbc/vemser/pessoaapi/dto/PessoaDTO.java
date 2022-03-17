@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class PessoaDTO extends PessoaCreateDTO {
+public class PessoaDTO extends PessoaCreateDTO{
 	
     private Integer idPessoa;
 }

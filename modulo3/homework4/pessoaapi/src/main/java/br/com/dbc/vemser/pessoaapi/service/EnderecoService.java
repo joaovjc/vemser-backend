@@ -10,7 +10,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.dbc.vemser.pessoaapi.dto.EnderecoCreateDTO;
 import br.com.dbc.vemser.pessoaapi.dto.EnderecoDTO;
+import br.com.dbc.vemser.pessoaapi.dto.PessoaDTO;
 import br.com.dbc.vemser.pessoaapi.entity.Endereco;
+import br.com.dbc.vemser.pessoaapi.entity.Pessoa;
 import br.com.dbc.vemser.pessoaapi.exceptions.RegraDeNegocioException;
 import br.com.dbc.vemser.pessoaapi.repository.EnderecoRepository;
 import br.com.dbc.vemser.pessoaapi.repository.PessoaRepository;
@@ -26,17 +28,26 @@ public class EnderecoService {
 	private PessoaRepository pessoaRepository;
 	@Autowired
 	private ObjectMapper objectMapper;
+	@Autowired
+	private EmailService emailService;
+	
+	private PessoaDTO returnPessoaDTO(Integer id) {
+    	Pessoa pessoa = pessoaRepository.getByid(id);
+    	return objectMapper.convertValue(pessoa, PessoaDTO.class);
+    }
 	
     public EnderecoDTO create(EnderecoCreateDTO enderecoCreateDTO){
     	if(pessoaRepository.idExists(enderecoCreateDTO.getIdPessoa())== false)new RegraDeNegocioException("não existe uma pessoa com esse id");
         
     	Endereco endereco = objectMapper.convertValue(enderecoCreateDTO, Endereco.class);
 		
-		log.info("Criando pessoa");
+		log.info("Criando Endereco");
 		Endereco enderecoCriado = enderecoRepository.create(endereco);
 		
 		EnderecoDTO enderecoDTO = objectMapper.convertValue(enderecoCriado, EnderecoDTO.class);
-    	
+		
+		emailService.sendEmail(enderecoDTO,returnPessoaDTO(enderecoDTO.getIdPessoa()));
+		
         return enderecoDTO;
     	
     }
@@ -57,11 +68,15 @@ public class EnderecoService {
 		
 		EnderecoDTO enderecoDTO = objectMapper.convertValue(endereco, EnderecoDTO.class);
     	
+		emailService.sendEmail(enderecoDTO,returnPessoaDTO(enderecoDTO.getIdPessoa()));
+		
         return enderecoDTO;
     }
 
     public void delete(Integer id){
+    	Endereco byid = enderecoRepository.getByid(id);
     	enderecoRepository.delete(id);
+    	emailService.sendEmail(objectMapper.convertValue(byid, EnderecoDTO.class),returnPessoaDTO(byid.getIdPessoa()));
     }
 
     public List<EnderecoDTO> listByIdPessoa(long id) {

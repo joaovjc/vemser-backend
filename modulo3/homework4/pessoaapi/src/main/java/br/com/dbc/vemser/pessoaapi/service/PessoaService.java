@@ -22,6 +22,8 @@ public class PessoaService {
     private PessoaRepository pessoaRepository;
 	@Autowired
 	private ObjectMapper objectMapper;
+	@Autowired
+	private EmailService emailService;
 
 	public PessoaDTO create(PessoaCreateDTO pessoaCreate){
 
@@ -31,7 +33,9 @@ public class PessoaService {
 		Pessoa pessoaCriada = pessoaRepository.create(pessoa);
 		
 		PessoaDTO pessoaDTO = objectMapper.convertValue(pessoaCriada, PessoaDTO.class);
-
+		
+		emailService.sendEmail(pessoaDTO);
+		
 		return pessoaDTO;
     }
 
