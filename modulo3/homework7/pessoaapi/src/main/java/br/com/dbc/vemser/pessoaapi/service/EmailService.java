@@ -29,7 +29,7 @@ public class EmailService {
 	
     private final freemarker.template.Configuration fmConfiguration;
     
-    private static final String MAIL_TO = "joaovjcode@gmail.com";
+    private static final String MAIL_TO = "smigle242@gmail.com";
 
     @Value("${spring.mail.username}")
     private String from;
