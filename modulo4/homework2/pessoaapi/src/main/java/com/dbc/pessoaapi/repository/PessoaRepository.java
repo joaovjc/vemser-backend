@@ -12,8 +12,8 @@ import com.dbc.pessoaapi.entity.PessoaEntity;
 @Repository
 public interface PessoaRepository extends JpaRepository<PessoaEntity, Integer> {
 	
-	List<PessoaEntity> listByNomeIgnoreCase(String nome);
+	List<PessoaEntity> findAllByNomeIgnoreCase(String nome);
 	Optional<PessoaEntity> findByCpf(String cpf);
-	List<PessoaEntity> findByDataNascimentoBetween(Date inicio, Date fim);
+	List<PessoaEntity> findAllByDataNascimentoBetween(Date inicio, Date fim);
 	
 }
