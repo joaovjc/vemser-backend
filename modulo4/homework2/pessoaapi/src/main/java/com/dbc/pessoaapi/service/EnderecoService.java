@@ -37,7 +37,6 @@ public class EnderecoService {
     	if(byId.isEmpty())throw new RegraDeNegocioException("Esse id de Pessoa não existe");
     	
     	EnderecoEntity endereco = new EnderecoEntity();
-    	
     	endereco.setCep(enderecoCreate.getCep());
     	endereco.setCidade(enderecoCreate.getCidade());
     	endereco.setComplemento(enderecoCreate.getComplemento());

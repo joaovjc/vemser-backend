@@ -1,12 +1,14 @@
 package com.dbc.pessoaapi.dto;
 
+import java.util.List;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class PessoaDTO extends PessoaCreateDTO {
+public class PessoaDTOComEnderecos extends PessoaDTO{
 	
-    private Integer idPessoa;
-    
+	List<EnderecoDTO> enderecos;
+	
 }

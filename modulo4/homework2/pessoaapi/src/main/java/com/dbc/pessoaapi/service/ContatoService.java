@@ -35,13 +35,11 @@ public class ContatoService {
     public ContatoDTO create(Integer idPessoa, ContatoCreateDTO contatoCreate) throws Exception {
     	Optional<PessoaEntity> byId = pessoaRepository.findById(idPessoa);
     	if(byId.isEmpty())throw new RegraDeNegocioException("Esse id de Pessoa não existe");
-    	
     	ContatoEntity contato = new ContatoEntity();
     	contato.setDescricao(contatoCreate.getDescricao());
     	contato.setIdPessoa(contatoCreate.getIdPessoa());
     	contato.setNumero(contatoCreate.getNumero());
     	contato.setTipoContato(TipoContato.ofTipo(contatoCreate.getTipoContato()));
-    	
     	ContatoEntity save = contatoRepository.save(contato);
     	ContatoDTO contatoF = objectMapper.convertValue(save, ContatoDTO.class);
         return contatoF;

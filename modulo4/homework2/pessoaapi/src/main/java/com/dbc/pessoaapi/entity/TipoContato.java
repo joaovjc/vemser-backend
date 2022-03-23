@@ -4,12 +4,10 @@ import java.util.Arrays;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-
 public enum TipoContato {
     RESIDENCIAL(0),
     COMERCIAL(1);
-	
-	
+
     private Integer tipo;
 
     TipoContato(Integer tipo) {
