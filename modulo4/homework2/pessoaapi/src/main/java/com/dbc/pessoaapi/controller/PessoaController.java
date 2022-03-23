@@ -1,5 +1,6 @@
 package com.dbc.pessoaapi.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -86,6 +87,11 @@ public class PessoaController {
     @GetMapping("/listar-com-enderecos")
     public List<PessoaDTOComEnderecos> listarPessoasComEnderecos(@RequestParam(value = "id", required = false) Integer idPessoa) throws RegraDeNegocioException {
         return pessoaService.listComEnderecos(idPessoa);
+    }
+    
+    @GetMapping("/listar-por")
+    public List<PessoaDTO> listarPor(@RequestParam(value = "nome", required = false) String nome, @RequestParam(value = "cpf", required = false) String cpf, @RequestParam(value = "datainicio", required = false)Date inicio, @RequestParam(value = "datafim", required = false) Date fim) throws RegraDeNegocioException {
+        return pessoaService.listPor(nome, cpf, inicio, fim);
     }
 
     @PutMapping("/{idPessoa}")

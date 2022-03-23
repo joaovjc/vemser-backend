@@ -1,6 +1,7 @@
 package com.dbc.pessoaapi.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -92,6 +93,31 @@ public class PessoaService {
             pessoaDTOList.add(pessoaDTO);
         }
         return pessoaDTOList;
+    }
+    
+    public List<PessoaDTO> listPor(String nome, String cpf, Date inicio, Date fim) throws RegraDeNegocioException{
+    	List<PessoaDTO> dtos = new ArrayList<>();
+    	
+    	if(!nome.isEmpty()) {
+    		dtos.addAll(pessoaRepository.findAllByNomeIgnoreCase(nome)
+    				.stream()
+    				.map(t -> objectMapper.convertValue(t, PessoaDTO.class))
+    				.toList()
+    				);
+    	}else if(!cpf.isEmpty()) {
+    		PessoaEntity pessoa = pessoaRepository.findByCpf(cpf).orElseThrow(() -> new RegraDeNegocioException("Pessoa não econtrada!"));
+    		dtos.add(objectMapper.convertValue(pessoa, PessoaDTO.class));
+    	}else if(inicio==null) {
+    		dtos.addAll(pessoaRepository.findAllByDataNascimentoBetween(inicio, fim)
+    				.stream()
+    				.map(t -> objectMapper.convertValue(t, PessoaDTO.class))
+    				.toList()
+    				);
+    	}else {
+    		throw new RegraDeNegocioException("preencha algum dos campos");
+    	}
+    	
+		return dtos;
     }
     
     public List<PessoaDTO> list() {
