@@ -2,6 +2,7 @@ package com.dbc.pessoaapi.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
@@ -51,6 +54,11 @@ public class EnderecoEntity {
 	@Column(name = "pais")
 	private String pais;
 	@JsonIgnore
-	@ManyToMany(mappedBy = "enderecos")
+	@ManyToMany(cascade = CascadeType.MERGE)
+	@JoinTable(
+            name = "Pessoa_X_Pessoa_Endereco",
+            joinColumns = @JoinColumn(name = "id_endereco"),
+            inverseJoinColumns = @JoinColumn(name= "id_pessoa")
+    )
 	private Set<PessoaEntity> pessoas;
 }

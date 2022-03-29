@@ -23,6 +23,14 @@ public interface PessoaRepository extends JpaRepository<PessoaEntity, Integer> {
 	@Query("select p from PESSOA p INNER JOIN p.enderecos e ")
 	List<PessoaEntity> listPorEndereco();
 	
-	@Query(nativeQuery = true, value = "SELECT * FROM PESSOA p LEFT JOIN PESSOA_X_PESSOA_ENDERECO e ON p.ID_PESSOA = NULL")
+	@Query(nativeQuery = true, value = "SELECT "
+			+ "        * "
+			+ "    FROM "
+			+ "        PESSOA p "
+			+ "    LEFT JOIN"
+			+ "        PESSOA_X_PESSOA_ENDERECO e "
+			+ "            ON e.ID_PESSOA = p.ID_PESSOA "
+			+ "    WHERE"
+			+ "        e.ID_PESSOA IS NULL")
 	List<PessoaEntity> listPorSemEndereco();
 }
