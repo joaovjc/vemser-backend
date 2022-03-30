@@ -9,11 +9,11 @@ public class ExercicioCinco {
 	public static void main(String[] args) {
 		LocalDateTime localDateTime = LocalDateTime.now();
 		System.out.println(localDateTime
-				.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).withLocale(new Locale("pt-BR"))));
+				.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(new Locale("pt-BR"))));
 		System.out.println(localDateTime
-				.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).withLocale(Locale.US)));
+				.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(Locale.US)));
 		System.out.println(localDateTime
-				.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).withLocale(Locale.FRANCE)));
+				.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(Locale.FRANCE)));
 		
 		
 	}
