@@ -2,6 +2,8 @@ package com.dbc.pessoaapi.entity;
 
 import java.util.Arrays;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum TipoContato {
     RESIDENCIAL(0),
     COMERCIAL(1);
@@ -12,7 +14,7 @@ public enum TipoContato {
         this.tipo = tipo;
     }
     
-//    @JsonValue
+    @JsonValue
     public Integer getTipo() {
         return tipo;
     }
