@@ -31,6 +31,7 @@ public class UsuarioService {
     }
 
 	public UserDTO AdicionarUser(UserCreateDTO user) throws RegraDeNegocioException {
+		
 		if(usuarioRepository.findByLogin(user.getLogin()).isPresent()) throw new RegraDeNegocioException("esse login já existe!");
 		Set<GrupoEntity> grupos = new HashSet<>();
 		for (String grupo : user.getGrupos()) {

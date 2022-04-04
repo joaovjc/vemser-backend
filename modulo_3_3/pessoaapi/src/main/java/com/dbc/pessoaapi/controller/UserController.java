@@ -23,7 +23,7 @@ public class UserController {
     private final UsuarioService userService;
 
     @PostMapping
-	public UserDTO AdicionarUser(@Valid @RequestBody UserCreateDTO user) throws RegraDeNegocioException{
+	public UserDTO adicionarUser(@Valid @RequestBody UserCreateDTO user) throws RegraDeNegocioException{
 		return userService.AdicionarUser(user);
 	}
 
