@@ -1,0 +1,48 @@
+db.createCollection("user_vms")
+
+db.user_vms.insertMany(
+[
+    {
+        "nome" : "joão Victor", 
+        "username" : "joaoVJC", 
+        "email" : "joao@joao.com", 
+        "password" : "String@123",
+        "roles" : [ 
+        { "name" : "ROLE_ADMIN", "descicao" : "adiministrador" }
+        ]         
+    },
+    {
+        "nome" : "Gustavo", 
+        "username" : "gustavo", 
+        "email" : "gustavo@gustavo.com", 
+        "password" : "String@123",
+        "roles" : [ 
+        { "name" : "ROLE_ADMIN", "descicao" : "adiministrador" }
+        ]         
+    },
+    {
+        "nome" : "Lucas", 
+        "username" : "lucas", 
+        "email" : "lucas@lucas.com", 
+        "password" : "String@123",
+        "roles" : [ 
+        { "name" : "ROLE_ADMIN", "descicao" : "adiministrador" }
+        ]         
+    },
+    {
+        "nome" : "jpessoa", 
+        "username" : "jpessoaj", 
+        "email" : "joao@joao.com", 
+        "password" : "String@123",
+        "roles" : [ 
+        { "name" : "ROLE_USER", "descicao" : "adiministrador" }
+        ]         
+    }
+]
+)
+
+db.user_vms.find()
+
+db.user_vms.find( { "nome" : "joão Victor" } )
+
+db.user_vms.deleteOne( { "nome" : "joão Victor" } )

@@ -1,0 +1,172 @@
+db.createCollection("pokemon")
+
+db.pokemon.insertMany([
+		{
+	      "racaPokemon": "Squirtle",
+	      "peso": 16.46,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 8,
+	      "dificuldade": "FACIL",
+	      "tipos": {tipo_um:"WATER"},
+	      "raridade": "COMUM"
+	    },
+	    {
+	      "racaPokemon": "Bulbasaur",
+	      "peso": 9.85,
+	      "sexo": "FEMININO",
+	      "nome": "Não Nomeado",
+	      "level": 6,
+	      "dificuldade": "FACIL",
+	      "tipos" : {tipo_um:"GRASS", tipo_dois:"POISON"},
+	      "raridade": "COMUM"
+		},
+	    {
+	      "racaPokemon": "Ivysaur",
+	      "peso": 18.1,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 16,
+	      "dificuldade": "MEDIO",
+		  "tipos" : {tipo_um:"GRASS", tipo_dois:"POISON"},
+	      "raridade": "RARO"
+	    },
+	    {
+	      "racaPokemon": "Bulbasaur",
+	      "peso": 9.73,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 5,
+	      "dificuldade": "FACIL",
+	      "tipos" : {tipo_um:"GRASS", tipo_dois:"POISON"},
+	      "raridade": "COMUM"
+	    },
+	    {
+	      "racaPokemon": "Bulbasaur",
+	      "peso": 8.27,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 5,
+	      "dificuldade": "FACIL",
+	      "tipos" : {tipo_um:"GRASS", tipo_dois:"POISON"},
+	      "raridade": "COMUM"
+	    },
+	    {
+	      "racaPokemon": "Bulbasaur",
+	      "peso": 9.85,
+	      "sexo": "FEMININO",
+	      "nome": "Não Nomeado",
+	      "level": 6,
+	      "dificuldade": "FACIL",
+	      "tipos" : {tipo_um:"GRASS", tipo_dois:"POISON"},
+	      "raridade": "COMUM"
+	    },
+	    {
+		    "racaPokemon": "Wartortle",
+		    "peso": 30.36,
+		    "sexo": "MASCULINO",
+		    "nome": "Não Nomeado",
+		    "level": 16,
+		    "dificuldade": "MEDIO",
+			"tipos": {tipo_um:"WATER"},
+		    "raridade": "RARO"
+	    },
+	    {
+	      "racaPokemon": "Wartortle",
+	      "peso": 33.55,
+	      "sexo": "FEMININO",
+	      "nome": "Não Nomeado",
+	      "level": 16,
+	      "dificuldade": "MEDIO",
+	      "tipos": {tipo_um:"WATER"},
+	      "raridade": "RARO"
+	    },
+	    {
+	      "racaPokemon": "Bulbasaur",
+	      "peso": 9.73,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 5,
+	      "dificuldade": "FACIL",
+	      "tipos" : {tipo_um:"GRASS", tipo_dois:"POISON"},
+	      "raridade": "COMUM"
+	    },
+	    {
+	      "racaPokemon": "Squirtle",
+	      "peso": 15.64,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 8,
+	      "dificuldade": "FACIL",
+	      "tipos": {tipo_um:"WATER"},
+	      "raridade": "COMUM"
+	    },
+	    {
+	      "racaPokemon": "Squirtle",
+	      "peso": 16.42,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 11,
+	      "dificuldade": "FACIL",
+	      "tipos": {tipo_um:"WATER"},
+	      "raridade": "COMUM"
+	    }
+]
+)
+db.mochila.insertMany([
+
+	{"nomeDono" : "joão Victor",
+		"pokebolas" : 10},
+
+	{"nomeDono" : "pedro henrique",
+		"masterball" : 15},
+
+	{"nomeDono" : "alberto augusto",
+		"pokebolas" : 27},
+]
+)
+
+db.pokemon.insertOne(
+		{
+	      "racaPokemon": "Bulbasaur",
+	      "peso": 8.27,
+	      "sexo": "MASCULINO",
+	      "nome": "Não Nomeado",
+	      "level": 5,
+	      "dificuldade": "FACIL",
+	      "tipos" : {tipo_um:"GRASS", tipo_dois:"POISON"}
+	      "raridade": "COMUM"
+	    }
+)
+
+db.pokemon.deleteOne( { racaPokemon : "Bulbasaur", sexo: "MASCULINO" } )
+db.pokemon.deleteMany({})
+
+db.mochila.find({
+    "pokebolas" : 27
+})
+
+db.pokemon.find(
+		{"tipos": {tipo_um : "WATER"}}
+)
+
+db.mochila.find({
+    "nomeDono" : "alberto augusto",
+	"pokebolas" : 27
+})
+
+db.mochila.find({
+    $or : [
+        {"nomeDono" : "alberto augusto"},
+        {"nomeDono" : "joão Victor"}
+    ]
+})
+
+db.mochila.updateOne(
+   { "nomeDono": "joão Victor" },
+   {
+     $set: { "nomeDono": "joão Victor", "pokebolas" : 40 }           
+   }
+)
+
+

@@ -1,0 +1,25 @@
+db.mochila.find(
+    {"pokebolas" : { $gt: 15 }} 
+).sort({"nomeDono" : 1})
+
+db.mochila.deleteMany({ "pokebolas" : { $gt : 27} })
+
+db.mochila.find().limit(2)
+
+db.mochila.find({
+    "peso": { $gt: 8.27 } 
+})
+
+db.pokemon.find( { racaPokemon: "Bulbasaur" } )
+
+db.pokemon.find( { "peso": { $gt: 10, $lt: 20 } } )
+
+db.pokemon.find( { "tipos": { $size: 2 } } )
+
+db.mochila.find( {}, { dificuldade: 1, "level": 1 } )
+
+db.mochila.aggregate( [
+   { $match: { "pokebolas" : { $gte : 27} } },
+   { $group: { _id: "$nomeDono", count: { $sum: 1 } } }
+] )
+
