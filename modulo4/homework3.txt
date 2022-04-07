@@ -1,3 +1,4 @@
+
 db.mochila.find(
     {"pokebolas" : { $gt: 15 }} 
 ).sort({"nomeDono" : 1})

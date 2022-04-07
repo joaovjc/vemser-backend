@@ -1,5 +1,7 @@
 db.createCollection("pokemon")
 
+db.createCollection("mochila")
+
 db.pokemon.insertMany([
 		{
 	      "racaPokemon": "Squirtle",
@@ -140,7 +142,7 @@ db.pokemon.insertOne(
 )
 
 db.pokemon.deleteOne( { racaPokemon : "Bulbasaur", sexo: "MASCULINO" } )
-db.pokemon.deleteMany({})
+db.pokemon.deleteMany({ })
 
 db.mochila.find({
     "pokebolas" : 27
