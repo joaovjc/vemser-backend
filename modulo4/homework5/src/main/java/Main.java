@@ -107,7 +107,6 @@ public class Main {
 		
 		aluno = alunos.find(Filters.gte("peso", "80")).first();
 
-
 		mongoClient.close();
 	}
 }
