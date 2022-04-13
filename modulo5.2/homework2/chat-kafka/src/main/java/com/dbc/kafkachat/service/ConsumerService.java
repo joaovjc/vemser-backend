@@ -55,4 +55,5 @@ public class ConsumerService {
     	MessageEntity create = messageService.create(readValue, "private");
     	log.info("persistido a mensagem de id: "+ create.getId());
     }
+    
 }
