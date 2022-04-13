@@ -3,6 +3,11 @@ package com.dbc.kafkachat.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.dbc.kafkachat.Entity.MessageEntity;
@@ -32,6 +37,14 @@ public class MessageService {
 		return messageRepository.findAll().stream().map(m->{
 			return MessageDTO.builder().dataCriacao(m.getDataCriacao()).mensagem(m.getMensagem()).usuario(m.getUsuario()).build();
 		}).collect(Collectors.toList());
+	}
+	
+	public Page<MessageDTO> findAllPrivateByPessoa(String usuario, String topico, Integer pagina){
+		Pageable pageable = PageRequest.of(pagina == null ? 0 : pagina, 10, Sort.by("dataCriacao").ascending());
+		List<MessageDTO> collect = messageRepository.findAllByUsuarioAndTopico(usuario, topico, pageable).stream().map(u->{
+			return MessageDTO.builder().dataCriacao(u.getDataCriacao()).mensagem(u.getMensagem()).usuario(u.getUsuario()).build();
+		}).collect(Collectors.toList());
+		return new PageImpl<MessageDTO>(collect);
 	}
 	
 }

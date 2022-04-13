@@ -15,19 +15,19 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/kafka")
+@RequestMapping("/enviar")
 @RequiredArgsConstructor
 public class ProdutorController {
     private final ProdutorService produtorService;
     
     private final String user = "joao"; 
 
-    @PostMapping("/enviar-geral")
+    @PostMapping("/geral")
     private void enviar(@RequestParam(name = "Mensagem") String mensagem) throws JsonProcessingException {
         produtorService.enviarMensagemGeral(MessageDTO.builder().mensagem(mensagem).usuario(user).build());
     }
     
-    @PostMapping("/enviar-varios")
+    @PostMapping("/varios")
     private void enviarVarios(@RequestParam(name = "Mensagem") String mensagem, @RequestParam(name = "Destinatários") List<TopicsEnum> topics) throws JsonProcessingException {
         produtorService.enviarMensagens(MessageDTO.builder().mensagem(mensagem).usuario(user).build(),topics);
     }
